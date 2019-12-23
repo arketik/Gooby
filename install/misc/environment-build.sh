@@ -30,7 +30,7 @@ cat > ${ENV} << EOF
 APILOG=${LOGS}/api.log
 CF_EMAIL=$(cat ${CONFIGVARS}/cf_email)
 CF_KEY=$(cat ${CONFIGVARS}/cf_key)
-CONFIGS=/data/Gooby
+CONFIGS=/var/local/Gooby
 CONFIGVARS=${CONFIGS}/Docker/.config
 CURDIR=$(pwd)
 DOWNLOADS=/mnt/google/Downloads
