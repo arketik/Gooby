@@ -1,0 +1,31 @@
+#
+# xTeVe - M3U Proxy for Plex DVR and Emby Live TV
+#
+  xteve:
+    restart: unless-stopped
+    image: bl0m1/xtevedocker
+    container_name: xteve
+    hostname: xteve
+    cpu_shares: 1024
+    ports:
+      - 34400:34400
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${CONFIGS}/xTeVe:/root/.xteve
+      - /tmp/xteve:/tmp/xteve
+      - ${MEDIA}:/Media
+    environment:
+      - PUID=${USERID}
+      - PGID=${GROUPID}
+      - TZ=${TIMEZONE}
+      - UMASK_SET=022
+      - VIRTUAL_HOST=xteve.${MYDOMAIN}
+      - VIRTUAL_PORT=34400
+      - VIRTUAL_NETWORK=nginx-proxy
+      - LETSENCRYPT_HOST=xteve.${MYDOMAIN}
+      - LETSENCRYPT_EMAIL=${MYEMAIL}
+    healthcheck:
+      test: ["CMD-SHELL", "netstat -ntlp | grep :34400"]
+      interval: 10s
+      timeout: 2s
+      retries: 3

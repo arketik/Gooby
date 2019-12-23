@@ -1,0 +1,31 @@
+#
+# JDownloader - Download engine
+#
+  jdownloader:
+    restart: always
+    image: jaymoulin/jdownloader
+    container_name: jdownloader
+    hostname: jdownloader
+    cpu_shares: 1024
+    ports:
+      - 3129:3129
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${SERVERCONFIGS}/JDownloader:/opt/JDownloader/cfg
+      - ${DOWNLOADS}:/root/Downloads
+      - ${MEDIA}:/Media
+    environment:
+      - PUID=${USERID}
+      - PGID=${GROUPID}
+      - TZ=${TIMEZONE}
+      - UMASK_SET=022
+      - VIRTUAL_HOST=jdownloader.${MYDOMAIN}
+      - VIRTUAL_PORT=3129
+      - VIRTUAL_NETWORK=nginx-proxy
+      - LETSENCRYPT_HOST=jdownloader.${MYDOMAIN}
+      - LETSENCRYPT_EMAIL=${MYEMAIL}
+    healthcheck:
+      test: ["CMD-SHELL", "netstat -ntlp | grep :3129"]
+      interval: 10s
+      timeout: 2s
+      retries: 3

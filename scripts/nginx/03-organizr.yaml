@@ -12,7 +12,7 @@
       letsencrypt-nginx-proxy-companion:
         condition: service_started
     volumes:
-      - ${CONFIGS}/Organizr:/config
+      - ${SERVERCONFIGS}/Organizr:/config
     environment:
       - PUID=${USERID}
       - PGID=${GROUPID}

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIGS=/var/local/Gooby
+CONFIGS=/data/Gooby
 CONFIGVARS=${CONFIGS}/Docker/.config
 CONFIGENV=${CONFIGS}/Docker/.env
 

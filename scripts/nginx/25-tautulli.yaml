@@ -14,8 +14,8 @@
         condition: service_started
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${CONFIGS}/Tautulli:/config
-      - ${CONFIGS}/Plex/Library/Application Support/Plex Media Server/Logs:/logs:ro
+      - ${SERVERCONFIGS}/Tautulli:/config
+      - ${SERVERCONFIGS}/Plex/Library/Application Support/Plex Media Server/Logs:/logs:ro
     environment:
       - PUID=${USERID}
       - PGID=${GROUPID}

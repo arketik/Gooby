@@ -13,7 +13,7 @@
       - 5000:5000
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${CONFIGS}/rTorrent:/config
+      - ${SERVERCONFIGS}/rTorrent:/config
       - ${DOWNLOADS}/rtorrent:/Downloads
       - ${MEDIA}:/Media
     environment:

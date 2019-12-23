@@ -3,7 +3,7 @@ Description=Mount Google Drive (Rclone)
 After=syslog.target local-fs.target network.target
 
 [Service]
-EnvironmentFile=/var/local/Gooby/Docker/.env
+EnvironmentFile=/data/Gooby/Docker/.env
 
 Type=simple
 User=GOOBYUSER

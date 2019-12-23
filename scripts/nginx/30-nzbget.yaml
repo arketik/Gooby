@@ -13,7 +13,7 @@
       letsencrypt-nginx-proxy-companion:
         condition: service_started
     volumes:
-      - ${CONFIGS}/NZBget:/config
+      - ${SERVERCONFIGS}/NZBget:/config
       - ${DOWNLOADS}:/Downloads
       - ${HOME}/logs:/logs
     environment:

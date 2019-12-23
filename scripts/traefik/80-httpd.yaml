@@ -10,7 +10,7 @@
       traefik:
         condition: service_healthy
     volumes:
-      - ${CONFIGS}/Web:/var/www/html
+      - ${SERVERCONFIGS}/Web:/var/www/html
       - /bin/netstat:/bin/netstat:ro
     networks:
       - gooby

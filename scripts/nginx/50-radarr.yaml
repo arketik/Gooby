@@ -16,7 +16,7 @@
         #condition: service_healthy
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${CONFIGS}/Radarr:/config
+      - ${SERVERCONFIGS}/Radarr:/config
       - ${HOME}/logs:/config/logs
       - ${MEDIA}:/Media
       - ${DOWNLOADS}:/Downloads

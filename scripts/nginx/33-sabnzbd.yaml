@@ -13,7 +13,7 @@
       letsencrypt-nginx-proxy-companion:
         condition: service_started
     volumes:
-      - ${CONFIGS}/SABnzbd:/config
+      - ${SERVERCONFIGS}/SABnzbd:/config
       - ${DOWNLOADS}:/Downloads
       - ${MEDIA}:/Media
       - ${LOGS}:/logs

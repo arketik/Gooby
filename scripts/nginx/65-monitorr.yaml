@@ -14,7 +14,7 @@
         condition: service_started
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${CONFIGS}/Monitorr:/app
+      - ${SERVERCONFIGS}/Monitorr:/app
     environment:
       - PUID=${USERID}
       - PGID=${GROUPID}
