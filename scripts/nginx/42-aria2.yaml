@@ -1,0 +1,27 @@
+#
+# Aria2 - Download engine
+#
+  aria2-webui:
+    restart: always
+    image: php:apache
+    container_name: aria2-webui
+    hostname: aria2
+    depends_on:
+      nginx-proxy:
+        condition: service_healthy
+      letsencrypt-nginx-proxy-companion:
+        condition: service_started
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${CONFIGS}/Aria2/www:/var/www/html
+      - ${DOWNLOADS}:/downloads
+      - ${MEDIA}:/Media
+    environment:
+      - PUID=${USERID}
+      - PGID=${GROUPID}
+      - TZ=${TIMEZONE}
+      - VIRTUAL_HOST=aria2.${MYDOMAIN}
+      - VIRTUAL_PORT=80
+      - VIRTUAL_NETWORK=nginx-proxy
+      - LETSENCRYPT_HOST=aria2.${MYDOMAIN}
+      - LETSENCRYPT_EMAIL=${MYEMAIL}
