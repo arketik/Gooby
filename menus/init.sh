@@ -8,7 +8,7 @@ source /opt/Gooby/menus/variables.sh
 APPS(){
 	PERFORM="apps"
 	TASK="init"
-	source /opt/Gooby/install/server/${TASK}-${PERFORM}.sh
+	source /opt/Gooby/install/init/${TASK}-${PERFORM}.sh
 }
 
 QUIT(){
