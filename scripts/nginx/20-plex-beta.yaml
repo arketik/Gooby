@@ -11,7 +11,7 @@
       - 8443:32400
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${SERVERCONFIGS}/Plex:/config
+      - ${CONFIGS}/Plex:/config
       - /tmp:/transcode
       - /bin/netstat:/bin/netstat:ro
       - ${MEDIA}:/Media

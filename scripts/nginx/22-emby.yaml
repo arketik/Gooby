@@ -10,7 +10,7 @@
     ports:
       - 2096:8920
     volumes:
-      - ${SERVERCONFIGS}/Emby:/config
+      - ${CONFIGS}/Emby:/config
       - ${MEDIA}:/Media
       - /tmp:/transcode
     environment:

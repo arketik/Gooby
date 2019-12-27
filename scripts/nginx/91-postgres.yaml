@@ -7,7 +7,7 @@
     container_name: postgres
     hostname: postgres
     volumes:
-      - ${SERVERCONFIGS}/Postgres:/var/lib/postgresql/data
+      - ${CONFIGS}/Postgres:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
       - /bin/netstat:/bin/netstat:ro
     environment:

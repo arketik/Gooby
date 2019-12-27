@@ -5,6 +5,10 @@ source /opt/Gooby/menus/variables.sh
 
 # Menu Options
 
+init(){
+	/opt/Gooby/menus/init.sh
+}
+
 server(){
 	/opt/Gooby/menus/server.sh
 }
@@ -40,12 +44,13 @@ COLOUR=${GREEN}
 
 show_menus() {
 	MENUSTART
-	echo " ${COLOUR}A${STD} - Maintain Server"
-	echo " ${COLOUR}B${STD} - Media Applications"
-	echo " ${COLOUR}C${STD} - Download Applications"
-	echo " ${COLOUR}D${STD} - Other Applications"
-	echo " ${COLOUR}E${STD} - Additional Tasks"
-	echo " ${COLOUR}F${STD} - Various Statistics"
+	echo " ${COLOUR}A${STD} - Init Server"
+	echo " ${COLOUR}B${STD} - Maintain Server"
+	echo " ${COLOUR}C${STD} - Media Applications"
+	echo " ${COLOUR}D${STD} - Download Applications"
+	echo " ${COLOUR}E${STD} - Other Applications"
+	echo " ${COLOUR}F${STD} - Additional Tasks"
+	echo " ${COLOUR}G${STD} - Various Statistics"
 	echo " ${LRED}Q${STD} - QUIT ${FUNCTION}"
 	echo " ${COLOUR}"
 	MENUEND
@@ -57,12 +62,13 @@ read_options(){
 	local CHOICE
 	read -n 1 -s -r -p "Choose option: " CHOICE
 	case ${CHOICE} in
-		[Aa]) server ;;
-		[Bb]) media ;;
-		[Cc]) download ;;
-		[Dd]) other ;;
-		[Ee]) misc ;;
-		[Ff]) stats ;;
+	  [Aa]) init ;;
+		[Bb]) server ;;
+		[Cc]) media ;;
+		[Dd]) download ;;
+		[Ee]) other ;;
+		[Ff]) misc ;;
+		[Gg]) stats ;;
 		[Qq]) quit ;;
 		*) echo "${LRED}Please select a valid option${STD}" && sleep 1
 	esac

@@ -16,7 +16,7 @@
         #condition: service_healthy
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${SERVERCONFIGS}/Sonarr:/config
+      - ${CONFIGS}/Sonarr:/config
       - ${HOME}/logs:/config/logs
       - ${MEDIA}:/Media
       - ${DOWNLOADS}:/Downloads

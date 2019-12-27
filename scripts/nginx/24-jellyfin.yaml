@@ -10,7 +10,7 @@
     ports:
       - 8096:8920
     volumes:
-      - ${SERVERCONFIGS}/Jellyfin:/config
+      - ${CONFIGS}/Jellyfin:/config
       - ${MEDIA}:/Media
       - /tmp:/transcode
     environment:

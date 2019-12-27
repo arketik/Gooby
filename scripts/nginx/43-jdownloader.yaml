@@ -11,7 +11,7 @@
       - 3129:3129
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${SERVERCONFIGS}/JDownloader:/opt/JDownloader/cfg
+      - ${CONFIGS}/JDownloader:/opt/JDownloader/cfg
       - ${DOWNLOADS}:/root/Downloads
       - ${MEDIA}:/Media
     environment:

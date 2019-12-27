@@ -10,7 +10,7 @@
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /bin/netstat:/bin/netstat
-      - ${SERVERCONFIGS}/Ombi:/config
+      - ${CONFIGS}/Ombi:/config
       - ${MEDIA}:/Media
     environment:
       - PUID=${USERID}

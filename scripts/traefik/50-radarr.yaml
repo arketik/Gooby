@@ -31,7 +31,7 @@
       - "traefik.frontend.headers.frameDeny=true"
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${SERVERCONFIGS}/Radarr:/config
+      - ${CONFIGS}/Radarr:/config
       - ${LOGS}:/config/logs
       - ${MEDIA}:/Media
       - /bin/netstat:/bin/netstat:ro

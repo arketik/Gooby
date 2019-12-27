@@ -14,7 +14,7 @@
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /bin/netstat:/bin/netstat:ro
-      - ${SERVERCONFIGS}/Deluge:/config
+      - ${CONFIGS}/Deluge:/config
       - ${DOWNLOADS}:/Downloads
       - ${MEDIA}:/Media
     environment:
